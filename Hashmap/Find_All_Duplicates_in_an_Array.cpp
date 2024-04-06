@@ -7,7 +7,7 @@ public:
         map<int,int> mpp;
         vector<int> ans;
         for(int i = 0;i < n;i++)
-        {
+        { 
             mpp[nums[i]]++;
 
             if(mpp[nums[i]] > 1)
