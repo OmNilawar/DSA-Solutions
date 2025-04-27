@@ -5,15 +5,13 @@ public:
         int count = 0;
 
         int i = 0;
-        int j = 2;
 
-        while(j < n)
+        while(i < n-2)
         {
-            if((nums[i]+nums[j])*2 == nums[i+1])
+            if((nums[i]+nums[i+2])*2 == nums[i+1])
                 count++;
             
             i++;
-            j++;
         }
 
         return count;
