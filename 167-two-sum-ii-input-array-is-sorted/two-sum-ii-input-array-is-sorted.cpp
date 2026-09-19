@@ -8,15 +8,15 @@ public:
         while(l < r)
         {
             int sum = numbers[l] + numbers[r];
+
             if(sum == target)
-                return {l+1,r+1};
-            
+                return {l+1, r+1};
             else if(sum > target)
                 r--;
             else
                 l++;
         }
 
-        return {-1,-1};
+        return {-1, -1};
     }
 };
