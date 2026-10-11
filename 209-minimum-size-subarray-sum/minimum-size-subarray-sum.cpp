@@ -4,26 +4,25 @@ public:
         int n = nums.size();
         int l = 0;
         int r = 0;
-        int sum = 0;
+        int temp = 0;
         int ans = INT_MAX;
 
         while(r < n)
         {
-            sum += nums[r];
+            temp += nums[r];
 
-            while(sum >= target && l <= r)
+            while(l <= r && temp-nums[l] >= target)
             {
-                ans = min(ans, r-l+1);
-                sum -= nums[l];
+                temp -= nums[l];
                 l++;
             }
-            
+
+            if(temp >= target)
+                ans = min(ans, r-l+1);
+
             r++;
         }
 
-        if(ans == INT_MAX)
-            return 0;
-
-        return ans;
+        return ans == INT_MAX ? 0 : ans;
     }
 };
